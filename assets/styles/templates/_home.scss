@@ -3,3 +3,26 @@
 /// @group Home
 /// @author MS
 ////
+
+@mixin randomize($number) {
+  @for $i from 1 through $number {
+    &:nth-child(#{$i}) {  transform: rotate(random(300) + deg) scale(random(5)) translate((random(100)*3) + %,( random(100)*3) + %); opacity: random(10) * 0.1; }
+  }
+}
+
+main {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+svg > * {
+  transform-origin: center;
+  transition: all 1s;
+  @include randomize(3000);
+}
+
+.active > * {
+  transform: initial !important;
+  opacity: 1 !important;
+}
