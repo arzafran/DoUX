@@ -18,6 +18,7 @@
   <meta property="og:site_name" content="" />
   <!-- Stylesheets and polyfills -->
   <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
@@ -45,8 +46,12 @@
 
   <!-- Content -->
   <main role="main">
+    <div class="wrapper">
+    <!--build:include 0.html-->
+    <!--/build-->
     <!--build:include 1.html-->
     <!--/build-->
+    </div>
   </main>
 
   <!-- /End of Content -->
@@ -59,11 +64,12 @@
   <!-- Javascript files -->
   <!-- build:js:dist js/app.js -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="./js/gest.min.js"></script>
-      <script src="./js/main.js"></script>
   <script>
   window.jQuery || document.write('<script src="./js/vendor/jquery.min.js"><\/script>');
   </script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+  <script src="./js/gest.min.js"></script>
+  <script src="./js/main.js"></script>
   <!-- /build -->
 </body>
 

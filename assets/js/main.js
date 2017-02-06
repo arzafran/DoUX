@@ -2,26 +2,33 @@ $(function(){
 
   gest.start();
 
+  $('.wrapper').slick({
+    fade: true,
+    arrows: false
+  });
+
   gest.options.subscribeWithCallback(function(gesture) {
 
     switch(gesture.direction) {
       case 'Up':
-        console.log('up');
+        $('svg').toggleClass('active');
       break;
       case 'Long up':
-        console.log('up');
+        $('svg').toggleClass('active');
       break;
       case 'Down':
-        console.log('down');
+        $('svg').toggleClass('active');
       break;
       case 'Long down':
-        console.log('down');
+        $('svg').toggleClass('active');
       break;
       case 'Left':
-        console.log('left');
+        $('svg').toggleClass('active');
+        $('.wrapper').slick('slickNext');
       break;
       case 'Right':
-        console.log('right');
+        $('.wrapper').slick('slickPrev');
+        $('svg').toggleClass('active');
       break;
     }
   });
