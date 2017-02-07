@@ -3,8 +3,9 @@ $(function(){
   gest.start();
 
   $('.wrapper').slick({
+    arrows: false,
     fade: true,
-    arrows: false
+    speed: 1200
   });
 
   gest.options.subscribeWithCallback(function(gesture) {
@@ -23,13 +24,19 @@ $(function(){
         $('svg').toggleClass('active');
       break;
       case 'Left':
-        $('svg').toggleClass('active');
         $('.wrapper').slick('slickNext');
       break;
       case 'Right':
-        $('.wrapper').slick('slickPrev');
-        $('svg').toggleClass('active');
+        $('.wrapper').slick('slickNext');
       break;
     }
   });
+});
+
+$('.wrapper').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+  $('svg').removeClass('active');
+});
+
+$('.wrapper').on('afterChange', function(event, slick, currentSlide, nextSlide){
+  $('svg').addClass('active');
 });
